@@ -20,8 +20,8 @@
         private string item_variant;
         private string location_id;
         private decimal price;
-        private int quantity
-            public Item(string item_id, string item_name)
+        private int quantity;
+        public Item(string item_id, string item_name)
         {
             this.item_id = item_id;
             this.item_name = item_name;

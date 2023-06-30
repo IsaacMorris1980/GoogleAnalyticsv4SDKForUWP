@@ -120,7 +120,11 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Models\BaseEvent.cs" />
+    <Compile Include="EcommerceEvents\Add_Payment_Info.cs" />
+    <Compile Include="EcommerceEvents\Add_Shipping_Info.cs" />
+    <Compile Include="EcommerceEvents\Add_To_Cart.cs" />
+    <Compile Include="EcommerceEvents\Add_To_Wishlist.cs" />
+    <Compile Include="EcommerceEvents\Begin_Checkout.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ValidationMessage.cs" />
     <Compile Include="Validation\DebugEventCalls.cs" />
