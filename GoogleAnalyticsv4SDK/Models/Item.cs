@@ -1,6 +1,6 @@
 ﻿namespace GoogleAnalyticsv4SDK.Models
 {
-    internal class Item
+    public class Item
     {
         private string item_id;  //required
         private string item_name; //required
@@ -26,5 +26,6 @@
             this.item_id = item_id;
             this.item_name = item_name;
         }
+
     }
 }
