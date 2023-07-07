@@ -8,11 +8,11 @@ namespace GoogleAnalyticsv4SDK.Events
 {
     public class ScreenView
     {
-        private const string _name = "screen_view";
+        private const string _name = "screenview";
         private EventParameters _parameters;
-        public ScreenView(string screen_name, string screeb_resolution)
+        public ScreenView(string screen_name, string screen_resolution)
         {
-            this.parameters = new EventParameters(screen_name, screeb_resolution, new List<Item>());
+            this.parameters = new EventParameters(screen_name, screen_resolution, new List<Item>());
         }
 
         public string name
