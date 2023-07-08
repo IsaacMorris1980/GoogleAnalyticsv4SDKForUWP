@@ -2,12 +2,13 @@
 
 using System.Collections.Generic;
 
-namespace GoogleAnalyticsv4SDK.EcommerceEvents
+namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Add_To_Wishlist
+    public class Add_To_Cart
     {
         private string currency; //required
         private decimal value; //required
         private List<Item> items; //required
+
     }
 }

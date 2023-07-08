@@ -4,15 +4,15 @@ using Newtonsoft.Json;
 
 using System.Collections.Generic;
 
-namespace GoogleAnalyticsv4SDK.Events
+namespace GoogleAnalyticsv4SDK.Events.Mobile.Navigation
 {
     public class ScreenView
     {
         private const string _name = "screenview";
-        private EventParameters _parameters;
+        private ScreenViewEventParameters _parameters;
         public ScreenView(string screen_name, string screen_resolution)
         {
-            this.parameters = new EventParameters(screen_name, screen_resolution, new List<Item>());
+            this.parameters = new ScreenViewEventParameters(screen_name, screen_resolution, new List<Item>());
         }
 
         public string name
@@ -20,7 +20,7 @@ namespace GoogleAnalyticsv4SDK.Events
             get { return _name; }
         }
         [JsonProperty("params")]
-        public EventParameters parameters
+        public ScreenViewEventParameters parameters
         {
             get
             {
@@ -90,11 +90,11 @@ namespace GoogleAnalyticsv4SDK.Events
     //}
 
 
-    public class EventParameters
+    public class ScreenViewEventParameters
     {
         private string _screen_name, _screen_resolution;
         private List<Item> _items = new List<Item>();
-        public EventParameters(string screen_name, string screen_resoltion, List<Item> items)
+        public ScreenViewEventParameters(string screen_name, string screen_resoltion, List<Item> items)
         {
             this.screen_name = screen_name;
             this.screenresolution = screen_resoltion;

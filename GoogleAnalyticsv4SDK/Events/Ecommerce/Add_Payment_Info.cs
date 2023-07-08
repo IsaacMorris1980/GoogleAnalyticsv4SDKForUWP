@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using GoogleAnalyticsv4SDK.Models;
 
-namespace GoogleAnalyticsv4SDK.Models
+
+using System.Collections.Generic;
+
+namespace GoogleAnalyticsv4SDK.Events.Ecommerce
+
 {
 
     public class Add_Payment_Info

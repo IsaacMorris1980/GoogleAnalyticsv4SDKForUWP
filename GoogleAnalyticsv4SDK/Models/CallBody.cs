@@ -1,6 +1,4 @@
-﻿using GoogleAnalyticsv4SDK.Events;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Models
@@ -14,8 +12,8 @@ namespace GoogleAnalyticsv4SDK.Models
         private string _engagement_time_msec = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString();
         private string _session_id = "1234";
         private bool _non_personalized_ads = true;
-        private List<ScreenView> _events = new List<ScreenView>();
-        public CallBody(string client_id, List<ScreenView> events)
+        private List<Object> _events = new List<Object>();
+        public CallBody(string client_id, List<Object> events)
         {
             _client_id = client_id;
             _events = events;
@@ -75,7 +73,7 @@ namespace GoogleAnalyticsv4SDK.Models
                 _non_personalized_ads = value;
             }
         }
-        public List<ScreenView> events
+        public List<Object> events
         {
             get
             {
