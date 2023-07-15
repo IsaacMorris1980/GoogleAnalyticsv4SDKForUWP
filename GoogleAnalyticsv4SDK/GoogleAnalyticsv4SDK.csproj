@@ -125,7 +125,21 @@
     <Compile Include="Events\Ecommerce\Add_To_Cart.cs" />
     <Compile Include="Events\Ecommerce\Add_To_Wishlist.cs" />
     <Compile Include="Events\Ecommerce\Begin_Checkout.cs" />
+    <Compile Include="Events\Ecommerce\Parameters\Ecommerce_Parameters.cs" />
+    <Compile Include="Events\Ecommerce\Parameters\Purchase_Parameters.cs" />
+    <Compile Include="Events\Ecommerce\Purchase.cs" />
+    <Compile Include="Events\Games\Earn_Virtual_Currency.cs" />
+    <Compile Include="Events\Games\Join_Group.cs" />
+    <Compile Include="Events\Games\Level_Up.cs" />
+    <Compile Include="Events\Games\Parameters\Group_Parameters.cs" />
+    <Compile Include="Events\Games\Parameters\Level_Parameters.cs" />
+    <Compile Include="Events\Games\Parameters\Virtual_Currency_Parameters.cs" />
+    <Compile Include="Events\Marketing\Campaign_Details.cs" />
+    <Compile Include="Events\Marketing\Generate_Leads.cs" />
+    <Compile Include="Events\Marketing\Parameters\Campaign_Parameters.cs" />
+    <Compile Include="Events\Marketing\Parameters\Lead_Parameters.cs" />
     <Compile Include="Events\Mobile\Execeptions.cs" />
+    <Compile Include="Events\Web\Login.cs" />
     <Compile Include="Helpers\GoogleAnalyticsEndpoints.cs" />
     <Compile Include="Models\CallBody.cs" />
     <Compile Include="Models\Item.cs" />
@@ -145,10 +159,7 @@
       <Version>13.0.3</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Events\Games\" />
-    <Folder Include="Events\Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

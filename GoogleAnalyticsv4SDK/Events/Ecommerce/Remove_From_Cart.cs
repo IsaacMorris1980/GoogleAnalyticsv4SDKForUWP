@@ -4,15 +4,11 @@ using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Add_To_Cart
+    public class Remove_From_Cart
     {
-        private string _name = "add_to_cart";
-        private Ecommerce_Parameters _parameters;//required for calls
+        private string _name = "remove_from_cart";
+        private Ecommerce_Parameters _parameters;
 
-        private Add_To_Cart(Ecommerce_Parameters parameters)
-        {
-            this.parameters = parameters;
-        }
         public string name
         {
             get
@@ -32,6 +28,5 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
                 _parameters = value;
             }
         }
-
     }
 }

@@ -1,9 +1,6 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters;
-using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
-
-using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 
@@ -14,9 +11,9 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
         private string _name = "add_payment_info";
         private Ecommerce_Parameters _parameters;//required for calls
 
-        private Add_Payment_Info(string currency, decimal value, List<Item> items, string coupon = "", string shipping_tier = "", string payment_type = "")
+        private Add_Payment_Info(Ecommerce_Parameters parameter)
         {
-            parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            parameters = parameter;
         }
         public string name
         {

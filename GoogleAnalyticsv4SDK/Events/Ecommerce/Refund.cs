@@ -4,12 +4,11 @@ using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Add_To_Cart
+    public class Refund
     {
-        private string _name = "add_to_cart";
-        private Ecommerce_Parameters _parameters;//required for calls
-
-        private Add_To_Cart(Ecommerce_Parameters parameters)
+        private string _name = "refund";
+        private Purchase_Refund_Parameters _parameters;
+        public Refund(Purchase_Refund_Parameters parameters)
         {
             this.parameters = parameters;
         }
@@ -21,7 +20,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Ecommerce_Parameters parameters
+        public Purchase_Refund_Parameters parameters
         {
             get
             {
@@ -32,6 +31,5 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
                 _parameters = value;
             }
         }
-
     }
 }

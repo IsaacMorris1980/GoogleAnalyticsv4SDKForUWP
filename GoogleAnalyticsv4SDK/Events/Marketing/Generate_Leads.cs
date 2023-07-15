@@ -1,15 +1,15 @@
-﻿using GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Marketing.Parameters;
 
 using Newtonsoft.Json;
 
-namespace GoogleAnalyticsv4SDK.Events.Ecommerce
+namespace GoogleAnalyticsv4SDK.Events.Marketing
 {
-    public class Add_To_Cart
+    public class Generate_Lead
     {
-        private string _name = "add_to_cart";
-        private Ecommerce_Parameters _parameters;//required for calls
+        private string _name = "generate_lead";
+        private Lead_Parameters _parameters;
 
-        private Add_To_Cart(Ecommerce_Parameters parameters)
+        public Generate_Lead(Lead_Parameters parameters)
         {
             this.parameters = parameters;
         }
@@ -21,7 +21,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Ecommerce_Parameters parameters
+        public Lead_Parameters parameters
         {
             get
             {
@@ -32,6 +32,5 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
                 _parameters = value;
             }
         }
-
     }
 }

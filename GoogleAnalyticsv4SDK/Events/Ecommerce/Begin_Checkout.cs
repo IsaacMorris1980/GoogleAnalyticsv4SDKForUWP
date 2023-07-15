@@ -1,9 +1,6 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters;
-using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
-
-using System.Collections.Generic;
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
     public class Begin_Checkout
@@ -11,9 +8,9 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
         private string _name = "begin_checkout";
         private Ecommerce_Parameters _parameters;//required for calls
 
-        private Begin_Checkout(string currency, decimal value, List<Item> items, string coupon = "", string shipping_tier = "", string payment_type = "")
+        private Begin_Checkout(Ecommerce_Parameters parameters)
         {
-            parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            this.parameters = parameters;
         }
         public string name
         {

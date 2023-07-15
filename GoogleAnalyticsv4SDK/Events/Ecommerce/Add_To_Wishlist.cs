@@ -1,9 +1,6 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters;
-using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
-
-using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
@@ -12,9 +9,9 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
         private string _name = "add_to_wishlist";
         private Ecommerce_Parameters _parameters;//required for calls
 
-        private Add_To_Wishlist(string currency, decimal value, List<Item> items, string coupon = "", string shipping_tier = "", string payment_type = "")
+        private Add_To_Wishlist(Ecommerce_Parameters parameters)
         {
-            parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            this.parameters = parameters;
         }
         public string name
         {
