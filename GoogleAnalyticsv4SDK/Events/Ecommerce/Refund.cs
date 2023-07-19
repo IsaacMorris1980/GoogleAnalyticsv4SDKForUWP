@@ -8,14 +8,13 @@ using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Begin_Checkout : IEvent
+    public class Refund : IEvent
     {
-        private string _name = "begin_checkout";
-        private Ecommerce_Parameters _parameters;//required for calls
-
-        private Begin_Checkout(string currency, decimal value, List<Item> items, string coupon = default, string shipping_tier = default, string payment_type = default)
+        private string _name = "refund";
+        private Purchase_Refund_Parameters _parameters;
+        public Refund(string _currency, string _transaction_id, decimal _value, List<Item> _items = default, string _coupon = default, decimal _shipping = default, decimal _tax = default)
         {
-            this.parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            this.parameters = new Purchase_Refund_Parameters(_currency, _transaction_id, _value, _items, _coupon, _shipping, _tax);
         }
         public string name
         {
@@ -25,7 +24,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Ecommerce_Parameters parameters
+        public Purchase_Refund_Parameters parameters
         {
             get
             {

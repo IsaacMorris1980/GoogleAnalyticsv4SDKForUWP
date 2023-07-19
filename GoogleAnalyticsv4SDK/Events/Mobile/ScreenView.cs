@@ -1,23 +1,26 @@
-﻿using GoogleAnalyticsv4SDK.Models;
+﻿using GoogleAnalyticsv4SDK.Interfaces;
+using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
 
 using System.Collections.Generic;
 
-namespace GoogleAnalyticsv4SDK.Events.Mobile.Navigation
+namespace GoogleAnalyticsv4SDK.Events.Mobile
 {
-    public class ScreenView
+    public class ScreenView : IEvent
     {
-        private const string _name = "screenview";
+        private string _name = "screen_view";
         private ScreenViewEventParameters _parameters;
         public ScreenView(string screen_name, string screen_resolution)
         {
+            this.name = screen_name;
             this.parameters = new ScreenViewEventParameters(screen_name, screen_resolution, new List<Item>());
         }
 
         public string name
         {
             get { return _name; }
+            set { _name = value; }
         }
         [JsonProperty("params")]
         public ScreenViewEventParameters parameters
