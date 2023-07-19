@@ -1,17 +1,14 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 
+using Newtonsoft.Json;
+
 namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Search : IEvent
+    public class Share : IEvent
     {
-        private string _name = "search";
-        private Search_Parameters _parameters;
-
-        public Search(Search_Parameters parameters)
-        {
-            this.parameters = parameters;
-        }
+        private string _name;
+        private Share_Parameters _parameters;
 
         public string name
         {
@@ -20,7 +17,8 @@ namespace GoogleAnalyticsv4SDK.Events.Web
                 return _name;
             }
         }
-        public Search_Parameters parameters
+        [JsonProperty("params")]
+        public Share_Parameters parameters
         {
             get
             {

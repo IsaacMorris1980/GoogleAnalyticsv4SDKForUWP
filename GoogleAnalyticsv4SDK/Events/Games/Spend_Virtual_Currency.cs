@@ -1,18 +1,19 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Games.Parameters;
-using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Games
 {
-    public class Level_Up : IEvent
+    public class Spend_Virtual_Currency
     {
-        private string _name = "level_up";
-        private Level_Parameters _parameters;
-        public Level_Up(int level = default, string character = default)
+        private string _name = "spend_virtual_currency";
+        private Virtual_Currency_Parameters _parameters;
+
+        public Spend_Virtual_Currency(string virtual_currency_name, decimal value, string item_name = default)
         {
-            this.parameters = new Level_Parameters(level, character);
+            this.parameters = new Virtual_Currency_Parameters(virtual_currency_name, value, item_name);
         }
+
         public string name
         {
             get
@@ -21,7 +22,7 @@ namespace GoogleAnalyticsv4SDK.Events.Games
             }
         }
         [JsonProperty("params")]
-        public Level_Parameters parameters
+        public Virtual_Currency_Parameters parameters
         {
             get
             {

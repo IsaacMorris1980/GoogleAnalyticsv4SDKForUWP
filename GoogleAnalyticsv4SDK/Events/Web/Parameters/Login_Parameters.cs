@@ -1,9 +1,9 @@
 ﻿namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
 {
-    public class Login_Parameters
+    public class Login_SignUp_Parameters
     {
         private string _method;
-        public Login_Parameters(string method = default)
+        public Login_SignUp_Parameters(string method = default)
         {
             this.method = method;
         }

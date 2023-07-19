@@ -1,17 +1,17 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Games.Parameters;
-using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Games
 {
-    public class Level_Up : IEvent
+    public class Unlock_Achievement
     {
-        private string _name = "level_up";
-        private Level_Parameters _parameters;
-        public Level_Up(int level = default, string character = default)
+        private string _name;
+        private Achievement_Parameters _parametrers;
+
+        public Unlock_Achievement(string achievement_id)
         {
-            this.parameters = new Level_Parameters(level, character);
+            parameters = new Achievement_Parameters(achievement_id);
         }
         public string name
         {
@@ -21,15 +21,15 @@ namespace GoogleAnalyticsv4SDK.Events.Games
             }
         }
         [JsonProperty("params")]
-        public Level_Parameters parameters
+        public Achievement_Parameters parameters
         {
             get
             {
-                return _parameters;
+                return _parametrers;
             }
             set
             {
-                _parameters = value;
+                _parametrers = value;
             }
         }
     }

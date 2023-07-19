@@ -1,14 +1,15 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
+using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Login
+    public class Login : IEvent
     {
         private string _name = "login";
-        private Login_Parameters _parameters;
-        public Login(Login_Parameters parameters)
+        private Login_SignUp_Parameters _parameters;
+        public Login(Login_SignUp_Parameters parameters)
         {
             this.parameters = parameters;
         }
@@ -20,7 +21,7 @@ namespace GoogleAnalyticsv4SDK.Events.Web
             }
         }
         [JsonProperty("params")]
-        public Login_Parameters parameters
+        public Login_SignUp_Parameters parameters
         {
             get
             {

@@ -5,15 +5,11 @@ using Newtonsoft.Json;
 
 namespace GoogleAnalyticsv4SDK.Events.Marketing
 {
-    public class Generate_Lead : IEvent
+    public class Select_Promotion : IEvent
     {
-        private string _name = "generate_lead";
-        private Lead_Parameters _parameters;
+        private string _name = "select_promotion";
+        private Promotion_Parameters _parameters;
 
-        public Generate_Lead(Lead_Parameters parameters)
-        {
-            this.parameters = parameters;
-        }
         public string name
         {
             get
@@ -22,7 +18,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing
             }
         }
         [JsonProperty("params")]
-        public Lead_Parameters parameters
+        public Promotion_Parameters parameters
         {
             get
             {

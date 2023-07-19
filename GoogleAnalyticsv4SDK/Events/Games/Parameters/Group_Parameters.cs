@@ -15,7 +15,7 @@
                 _group_id = value;
             }
         }
-        public Group_Parameters(string group_id = default)
+        public Group_Parameters(string group_id)
         {
             this.group_id = group_id;
         }

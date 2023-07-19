@@ -1,14 +1,20 @@
 ﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
-using GoogleAnalyticsv4SDK.Interfaces;
+using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
 
+using System.Collections.Generic;
+
 namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Select_Content : IEvent
+    public class View_Item_List
     {
-        private string _name = "select_content";
-        private Select_Content_Parameters _parameters;
+        private string _name;
+        private Item_List_Parameters _parameters;
+        public View_Item_List(List<Item> items, string item_list_id = default, string item_list_name = default)
+        {
+            this.parameters = new Item_List_Parameters(items, item_list_id, item_list_name);
+        }
 
         public string name
         {
@@ -17,13 +23,8 @@ namespace GoogleAnalyticsv4SDK.Events.Web
                 return _name;
             }
         }
-
-        public Select_Content(Select_Content_Parameters parameters)
-        {
-            this.parameters = parameters;
-        }
         [JsonProperty("params")]
-        public Select_Content_Parameters parameters
+        public Item_List_Parameters parameters
         {
             get
             {

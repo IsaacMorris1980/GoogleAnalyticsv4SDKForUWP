@@ -26,7 +26,7 @@
                 _character = value;
             }
         }
-        public Level_Parameters(int level = default, string character==default)
+        public Level_Parameters(int level = default, string character = default)
         {
             this.level = level;
             this.character = character;

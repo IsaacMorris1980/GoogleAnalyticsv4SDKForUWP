@@ -1,4 +1,5 @@
-﻿using GoogleAnalyticsv4SDK.Models;
+﻿using GoogleAnalyticsv4SDK.Interfaces;
+using GoogleAnalyticsv4SDK.Models;
 
 using Newtonsoft.Json;
 
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Mobile
 {
-    public class Execeptions
+    public class Execeptions : IEvent
     {
         private ExceptionEventParameters _parameters;
         private const string _name = "exception";

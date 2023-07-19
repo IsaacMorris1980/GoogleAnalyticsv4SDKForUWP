@@ -52,7 +52,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
             }
             set
             {
-                zoo; -
+                _source = value;
             }
         }
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]

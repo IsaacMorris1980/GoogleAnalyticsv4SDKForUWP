@@ -3,16 +3,15 @@ using GoogleAnalyticsv4SDK.Interfaces;
 
 namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Search : IEvent
+    public class Sign_Up : IEvent
     {
-        private string _name = "search";
-        private Search_Parameters _parameters;
+        private string _name = "sign_up";
+        private Login_SignUp_Parameters _parameters;
 
-        public Search(Search_Parameters parameters)
+        public Sign_Up(Login_SignUp_Parameters parameters = default)
         {
             this.parameters = parameters;
         }
-
         public string name
         {
             get
@@ -20,7 +19,7 @@ namespace GoogleAnalyticsv4SDK.Events.Web
                 return _name;
             }
         }
-        public Search_Parameters parameters
+        public Login_SignUp_Parameters parameters
         {
             get
             {
