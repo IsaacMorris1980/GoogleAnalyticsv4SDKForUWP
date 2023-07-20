@@ -1,5 +1,7 @@
 ﻿using GoogleAnalyticsv4SDK.Models;
 
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
@@ -15,6 +17,7 @@ namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
             this.item_list_id = item_list_id;
             this.item_list_name = item_list_name;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string item_list_id
         {
             get
@@ -26,6 +29,7 @@ namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
                 _item_list_id = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string item_list_name
         {
             get
@@ -37,6 +41,7 @@ namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
                 _item_list_name = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<Item> items
         {
             get

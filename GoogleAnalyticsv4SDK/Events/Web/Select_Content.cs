@@ -18,9 +18,9 @@ namespace GoogleAnalyticsv4SDK.Events.Web
             }
         }
 
-        public Select_Content(Select_Content_Parameters parameters)
+        public Select_Content(string content_type = default, string content_id = default)
         {
-            this.parameters = parameters;
+            this.parameters = new Select_Content_Parameters(content_type, content_id);
         }
         [JsonProperty("params")]
         public Select_Content_Parameters parameters

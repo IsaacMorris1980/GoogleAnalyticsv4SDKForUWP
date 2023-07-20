@@ -1,9 +1,11 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
 {
     public class Group_Parameters
     {
         public string _group_id;
-
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string group_id
         {
             get

@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
 {
     public class Post_Parameters
     {
@@ -11,6 +13,7 @@
             this.level = level;
             this.character = character;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int score
         {
             get
@@ -22,6 +25,7 @@
                 _score = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int level
         {
             get
@@ -33,6 +37,7 @@
                 _level = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string character
         {
             get

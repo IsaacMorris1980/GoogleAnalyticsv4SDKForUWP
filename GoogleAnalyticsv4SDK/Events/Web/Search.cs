@@ -8,9 +8,9 @@ namespace GoogleAnalyticsv4SDK.Events.Web
         private string _name = "search";
         private Search_Parameters _parameters;
 
-        public Search(Search_Parameters parameters)
+        public Search(string search_term = default)
         {
-            this.parameters = parameters;
+            this.parameters = new Search_Parameters(search_term);
         }
 
         public string name

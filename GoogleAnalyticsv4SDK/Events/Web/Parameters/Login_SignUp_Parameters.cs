@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
 {
     public class Login_SignUp_Parameters
     {
@@ -7,6 +9,7 @@
         {
             this.method = method;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string method
         {
             get

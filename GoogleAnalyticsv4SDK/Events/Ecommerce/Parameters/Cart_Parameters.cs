@@ -1,5 +1,7 @@
 ﻿using GoogleAnalyticsv4SDK.Models;
 
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
@@ -17,7 +19,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
             this.items = items;
         }
 
-
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string currency
         {
             get
@@ -29,6 +31,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _currency = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public decimal value
         {
             get
@@ -40,6 +43,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _value = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<Item> items
         {
             get

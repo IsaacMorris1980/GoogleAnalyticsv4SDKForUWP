@@ -138,6 +138,8 @@
     <Compile Include="Events\Marketing\Parameters\Promotion_Parameters.cs" />
     <Compile Include="Events\Marketing\Select_Promotion.cs" />
     <Compile Include="Events\Marketing\View_Promotion.cs" />
+    <Compile Include="Events\Mobile\Parameters\Exception_Parameters.cs" />
+    <Compile Include="Events\Mobile\Parameters\ScreenView_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Item_List_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Select_Content_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Search_Parameters.cs" />
@@ -158,7 +160,7 @@
     <Compile Include="Events\Marketing\Parameters\Lead_Parameters.cs" />
     <Compile Include="Events\Mobile\Execeptions.cs" />
     <Compile Include="Events\Web\Login.cs" />
-    <Compile Include="Events\Web\Parameters\Login_Parameters.cs" />
+    <Compile Include="Events\Web\Parameters\Login_SignUp_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Select_Item_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Share_Parameters.cs" />
     <Compile Include="Events\Web\Search.cs" />

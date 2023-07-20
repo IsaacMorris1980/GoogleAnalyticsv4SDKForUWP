@@ -1,5 +1,7 @@
 ﻿using GoogleAnalyticsv4SDK.Models;
 
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
@@ -20,6 +22,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
             this.promotion_name = promotion_name;
             this.items = items;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string creative_name
         {
             get
@@ -31,6 +34,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
                 _creative_name = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string creative_slot
         {
             get
@@ -42,6 +46,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
                 _creative_slot = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string promotion_id
         {
             get
@@ -53,6 +58,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
                 _promotion_id = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string promotion_name
         {
             get
@@ -64,6 +70,7 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
                 _promotion_name = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<Item> items
         {
             get

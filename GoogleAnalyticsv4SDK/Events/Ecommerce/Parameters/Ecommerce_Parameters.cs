@@ -1,5 +1,7 @@
 ﻿using GoogleAnalyticsv4SDK.Models;
 
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
@@ -23,6 +25,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
             this.payment_type = payment_type;
             this.items = items;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string currency
         {
             get
@@ -34,6 +37,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _currency = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public decimal value
         {
             get
@@ -45,6 +49,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _value = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string coupon
         {
             get
@@ -56,6 +61,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _coupon = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string shipping_tier
         {
             get
@@ -67,6 +73,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _shipping_tier = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string payment_type
         {
             get
@@ -78,6 +85,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters
                 _payment_type = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public List<Item> items
         {
             get

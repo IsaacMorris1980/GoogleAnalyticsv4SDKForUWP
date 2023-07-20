@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
 {
     public class Share_Parameters
     {
@@ -13,6 +15,7 @@
             this.item_id = item_id;
 
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string method
         {
             get
@@ -24,6 +27,7 @@
                 _method = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string content_type
         {
             get
@@ -35,6 +39,7 @@
                 _content_type = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string item_id
         {
             get
