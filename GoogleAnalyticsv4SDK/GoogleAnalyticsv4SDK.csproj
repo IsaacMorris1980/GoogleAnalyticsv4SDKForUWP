@@ -128,6 +128,8 @@
     <Compile Include="Events\Ecommerce\Parameters\Cart_Parameters.cs" />
     <Compile Include="Events\Ecommerce\Parameters\Ecommerce_Parameters.cs" />
     <Compile Include="Events\Ecommerce\Parameters\Purchase_Parameters.cs" />
+    <Compile Include="Events\Ecommerce\View_Cart.cs" />
+    <Compile Include="Events\Ecommerce\View_Item.cs" />
     <Compile Include="Events\Games\Parameters\Achievement_Parameters.cs" />
     <Compile Include="Events\Games\Spend_Virtual_Currency.cs" />
     <Compile Include="Events\Games\Tutorial_Begin.cs" />
@@ -135,6 +137,8 @@
     <Compile Include="Events\Games\Unlock_Achievement.cs" />
     <Compile Include="Events\Marketing\Parameters\Promotion_Parameters.cs" />
     <Compile Include="Events\Marketing\Select_Promotion.cs" />
+    <Compile Include="Events\Marketing\View_Promotion.cs" />
+    <Compile Include="Events\Web\Parameters\Item_List_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Select_Content_Parameters.cs" />
     <Compile Include="Events\Web\Parameters\Search_Parameters.cs" />
     <Compile Include="Events\Ecommerce\Purchase.cs" />
@@ -162,6 +166,8 @@
     <Compile Include="Events\Web\Select_Item.cs" />
     <Compile Include="Events\Web\Share.cs" />
     <Compile Include="Events\Web\Sign_Up.cs" />
+    <Compile Include="Events\Web\View_Item_List.cs" />
+    <Compile Include="Events\Web\View_Search_Results.cs" />
     <Compile Include="Helpers\GoogleAnalyticsEndpoints.cs" />
     <Compile Include="Interfaces\IEvent.cs" />
     <Compile Include="Models\HttpRequestBody.cs" />

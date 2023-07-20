@@ -13,9 +13,9 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
         private string _name = "begin_checkout";
         private Ecommerce_Parameters _parameters;//required for calls
 
-        private Begin_Checkout(string currency, decimal value, List<Item> items, string coupon = default, string shipping_tier = default, string payment_type = default)
+        private Begin_Checkout(string currency, decimal value, List<Item> items, string coupon = default)
         {
-            this.parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            this.parameters = new Ecommerce_Parameters(currency, value, items, coupon);
         }
         public string name
         {

@@ -10,9 +10,9 @@ namespace GoogleAnalyticsv4SDK.Events.Marketing
         private string _name = "generate_lead";
         private Lead_Parameters _parameters;
 
-        public Generate_Lead(Lead_Parameters parameters)
+        public Generate_Lead(string currency, decimal value)
         {
-            this.parameters = parameters;
+            this.parameters = new Lead_Parameters(currency, value);
         }
         public string name
         {
