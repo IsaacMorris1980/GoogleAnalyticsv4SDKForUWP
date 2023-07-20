@@ -11,11 +11,11 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
     public class Remove_From_Cart : IEvent
     {
         private string _name = "remove_from_cart";
-        private Ecommerce_Parameters _parameters;
+        private Cart_Parameters _parameters;
 
-        public Remove_From_Cart(string currency, decimal value, List<Item> items, string coupon = default, string shipping_tier = default, string payment_type = default)
+        public Remove_From_Cart(string currency, decimal value, List<Item> items)
         {
-            this.parameters = new Ecommerce_Parameters(currency, value, items, coupon, shipping_tier, payment_type);
+            this.parameters = new Cart_Parameters(currency, value, items);
         }
 
         public string name
@@ -26,7 +26,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Ecommerce_Parameters parameters
+        public Cart_Parameters parameters
         {
             get
             {

@@ -1,20 +1,19 @@
-﻿using GoogleAnalyticsv4SDK.Interfaces;
-using GoogleAnalyticsv4SDK.Models;
+﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
 using System;
-using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Mobile
 {
     public class Execeptions : IEvent
     {
-        private ExceptionEventParameters _parameters;
+        private Exception_Parameters _parameters;
         private const string _name = "exception";
         public Execeptions(Exception e)
         {
-            this._parameters = new ExceptionEventParameters(e, new List<Item>());
+            this._parameters = new Exception_Parameters(e);
 
         }
         public string name
@@ -25,7 +24,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
         }
         [JsonProperty("params")]
-        public ExceptionEventParameters parameters
+        public Exception_Parameters parameters
         {
             get
             {
@@ -37,76 +36,5 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
 
         }
-
-    }
-    public class ExceptionEventParameters
-    {
-        private Exception _exception;
-        private Exception _innerexception;
-        private string _message;
-        private string _stacktrace;
-        private string _source;
-        private List<Item> _items = new List<Item>();
-        public ExceptionEventParameters(Exception e, List<Item> items)
-        {
-            this._exception = e;
-            this._innerexception = e.InnerException;
-            this._message = e.Message;
-            this._stacktrace = e.StackTrace;
-            this._source = e.Source;
-            this._items = items;
-        }
-
-        public string exception
-        {
-            get
-            {
-                return JsonConvert.SerializeObject(this._exception.ToString());
-            }
-        }
-        public string innerexception
-        {
-            get
-            {
-                if (_innerexception != null)
-                {
-                    return JsonConvert.SerializeObject(this._innerexception.ToString());
-                }
-                return _innerexception == null ? string.Empty : JsonConvert.SerializeObject(innerexception, Formatting.Indented);
-            }
-        }
-        public string message
-        {
-            get
-
-            {
-                return _message == string.Empty ? string.Empty : _message;
-            }
-
-        }
-        public string stacktrace
-        {
-            get
-            {
-                return _stacktrace == null ? string.Empty : _stacktrace;
-            }
-        }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string source
-        {
-            get
-            {
-                return _source == string.Empty ? string.Empty : _source;
-            }
-        }
-        public List<Item> items
-        {
-            get
-            {
-                return _items;
-            }
-
-        }
-
     }
 }
