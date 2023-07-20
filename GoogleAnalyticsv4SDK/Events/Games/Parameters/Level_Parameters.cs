@@ -1,9 +1,12 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
 {
     public class Level_Parameters
     {
         private int _level;
         private string _character;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int level
         {
             get
@@ -15,6 +18,7 @@
                 _level = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string character
         {
             get

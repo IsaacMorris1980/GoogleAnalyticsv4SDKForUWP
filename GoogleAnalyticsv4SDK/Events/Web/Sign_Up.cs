@@ -8,9 +8,9 @@ namespace GoogleAnalyticsv4SDK.Events.Web
         private string _name = "sign_up";
         private Login_SignUp_Parameters _parameters;
 
-        public Sign_Up(Login_SignUp_Parameters parameters = default)
+        public Sign_Up(string method = default)
         {
-            this.parameters = parameters;
+            this.parameters = new Login_SignUp_Parameters(method);
         }
         public string name
         {

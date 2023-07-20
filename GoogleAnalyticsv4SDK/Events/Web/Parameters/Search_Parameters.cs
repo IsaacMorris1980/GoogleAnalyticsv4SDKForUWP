@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Web.Parameters
 {
     public class Search_Parameters
     {
@@ -8,6 +10,7 @@
         {
             this.search_term = search_term;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string search_term
         {
             get

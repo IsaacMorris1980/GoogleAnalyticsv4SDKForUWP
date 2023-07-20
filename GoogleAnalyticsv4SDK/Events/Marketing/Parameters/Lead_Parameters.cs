@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Marketing.Parameters
 {
     public class Lead_Parameters
     {
@@ -9,6 +11,7 @@
             this.currency = currency;
             this.value = value;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string currency
         {
             get
@@ -20,6 +23,7 @@
                 _currency = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public decimal value
         {
             get

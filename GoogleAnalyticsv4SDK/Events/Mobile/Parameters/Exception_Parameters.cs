@@ -1,58 +1,71 @@
 ﻿using Newtonsoft.Json;
 
-using System;
-
 namespace GoogleAnalyticsv4SDK.Events.Mobile.Parameters
 {
     public class Exception_Parameters
     {
-        private Exception _exception;
-        private Exception _innerexception;
+        private string _exception;
+        private string _innerexception;
         private string _message;
         private string _stacktrace;
         private string _source;
 
-        public Exception_Parameters(Exception e)
+        public Exception_Parameters(string exception, string innerexception, string message, string stacktrace, string source)
         {
-            this._exception = e;
-            this._innerexception = e.InnerException;
-            this._message = e.Message;
-            this._stacktrace = e.StackTrace;
-            this._source = e.Source;
+            this.exception = exception;
+            this.innerexception = innerexception;
+            this.message = message;
+            this.stacktrace = stacktrace;
+            this.source = source;
         }
-
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string exception
         {
             get
             {
-                return JsonConvert.SerializeObject(this._exception.ToString());
+                return _exception.ToString();
+            }
+            set
+            {
+                _exception = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string innerexception
         {
             get
             {
-                if (_innerexception != null)
-                {
-                    return JsonConvert.SerializeObject(this._innerexception.ToString());
-                }
-                return _innerexception == null ? string.Empty : JsonConvert.SerializeObject(innerexception, Formatting.Indented);
+                return _innerexception;
+            }
+            set
+            {
+                _innerexception = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string message
         {
             get
 
             {
-                return _message == string.Empty ? string.Empty : _message;
+                return _message;
+            }
+            set
+            {
+                _message = value;
             }
 
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string stacktrace
         {
             get
             {
-                return _stacktrace == null ? string.Empty : _stacktrace;
+                return _stacktrace;
+            }
+            set
+            {
+                _stacktrace = value;
             }
         }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
@@ -60,7 +73,11 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile.Parameters
         {
             get
             {
-                return _source == string.Empty ? string.Empty : _source;
+                return _source;
+            }
+            set
+            {
+                _source = value;
             }
         }
     }

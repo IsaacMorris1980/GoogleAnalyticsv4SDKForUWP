@@ -1,5 +1,7 @@
 ﻿using GoogleAnalyticsv4SDK.Models;
 
+using Newtonsoft.Json;
+
 using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Mobile.Parameters
@@ -13,7 +15,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile.Parameters
             this.screen_name = screen_name;
             this.screen_resolution = screen_resoltion;
         }
-
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string screen_name
         {
             get
@@ -25,6 +27,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile.Parameters
                 this._screen_name = value;
             }
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string screen_resolution
         {
             get

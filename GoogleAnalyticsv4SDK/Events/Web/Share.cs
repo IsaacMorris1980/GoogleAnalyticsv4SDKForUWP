@@ -9,7 +9,10 @@ namespace GoogleAnalyticsv4SDK.Events.Web
     {
         private string _name;
         private Share_Parameters _parameters;
-
+        public Share(string method = default, string content_type = default, string item_id = default)
+        {
+            this.parameters = new Share_Parameters(method, content_type, item_id);
+        }
         public string name
         {
             get

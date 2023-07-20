@@ -1,4 +1,6 @@
-﻿namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
+﻿using Newtonsoft.Json;
+
+namespace GoogleAnalyticsv4SDK.Events.Games.Parameters
 {
     public class Achievement_Parameters
     {
@@ -8,6 +10,7 @@
         {
             this.achivement_id = achievement_id;
         }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string achivement_id
         {
             get
