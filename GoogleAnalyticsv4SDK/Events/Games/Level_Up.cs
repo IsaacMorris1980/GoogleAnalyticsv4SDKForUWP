@@ -1,20 +1,17 @@
-﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Games.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
-using System;
-
-namespace GoogleAnalyticsv4SDK.Events.Mobile
+namespace GoogleAnalyticsv4SDK.Events.Games
 {
-    public class Execeptions : IEvent
+    public class Level_Up : IEvent
     {
-        private Exception_Parameters _parameters;
-        private const string _name = "exception";
-        public Execeptions(Exception e)
+        private string _name = "level_up";
+        private Level_Parameters _parameters;
+        public Level_Up(int level = default, string character = default)
         {
-            this._parameters = new Exception_Parameters(e);
-
+            this.parameters = new Level_Parameters(level, character);
         }
         public string name
         {
@@ -24,7 +21,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
         }
         [JsonProperty("params")]
-        public Exception_Parameters parameters
+        public Level_Parameters parameters
         {
             get
             {
@@ -34,7 +31,6 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             {
                 _parameters = value;
             }
-
         }
     }
 }

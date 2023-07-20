@@ -1,20 +1,17 @@
-﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
-using System;
-
-namespace GoogleAnalyticsv4SDK.Events.Mobile
+namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Execeptions : IEvent
+    public class Share : IEvent
     {
-        private Exception_Parameters _parameters;
-        private const string _name = "exception";
-        public Execeptions(Exception e)
+        private string _name;
+        private Share_Parameters _parameters;
+        public Share(string method = default, string content_type = default, string item_id = default)
         {
-            this._parameters = new Exception_Parameters(e);
-
+            this.parameters = new Share_Parameters(method, content_type, item_id);
         }
         public string name
         {
@@ -24,7 +21,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
         }
         [JsonProperty("params")]
-        public Exception_Parameters parameters
+        public Share_Parameters parameters
         {
             get
             {
@@ -34,7 +31,6 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             {
                 _parameters = value;
             }
-
         }
     }
 }

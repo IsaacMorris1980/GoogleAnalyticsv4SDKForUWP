@@ -1,26 +1,27 @@
-﻿using GoogleAnalyticsv4SDK.Models;
+﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
-using System.Collections.Generic;
-
-namespace GoogleAnalyticsv4SDK.Events.Mobile.Navigation
+namespace GoogleAnalyticsv4SDK.Events.Mobile
 {
-    public class ScreenView
+    public class ScreenView : IEvent
     {
-        private const string _name = "screenview";
-        private ScreenViewEventParameters _parameters;
+        private string _name = "screen_view";
+        private ScreenView_Parameters _parameters;
         public ScreenView(string screen_name, string screen_resolution)
         {
-            this.parameters = new ScreenViewEventParameters(screen_name, screen_resolution, new List<Item>());
+            this.name = screen_name;
+            this.parameters = new ScreenView_Parameters(screen_name, screen_resolution);
         }
 
         public string name
         {
             get { return _name; }
+            set { _name = value; }
         }
         [JsonProperty("params")]
-        public ScreenViewEventParameters parameters
+        public ScreenView_Parameters parameters
         {
             get
             {
@@ -32,108 +33,8 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile.Navigation
             }
 
         }
-        //public string screenname
-        //{
-        //    get
-        //    {
-        //        return this._screen_name;
-        //    }
-        //    set
-        //    {
-        //        this._screen_name = value;
-        //    }
-        //}
-        //public string screenresolution
-        //{
-        //    get
-        //    {
-        //        return this._screen_resolution;
-        //    }
-        //    set
-        //    {
-        //        this._screen_resolution = value;
-        //    }
-        //}
-        //public List<Item> items
-        //{
-        //    get
-        //    {
-        //        return _items;
-        //    }
-        //    set
-        //    {
-        //        _items = value;
-        //    }
-    }
-    //public string screen_title
-    //{
-    //    get
-    //    {
-    //        return _page_title;
-
-    //    }
-    //    set
-    //    {
-    //        _page_title = value;
-    //    }
-    //}
-    //public string page_location
-    //{
-    //    get
-    //    {
-    //        return _page_location;
-    //    }
-    //    set
-    //    {
-    //        _page_location = value;
-    //    }
-    //}
-
-
-    public class ScreenViewEventParameters
-    {
-        private string _screen_name, _screen_resolution;
-        private List<Item> _items = new List<Item>();
-        public ScreenViewEventParameters(string screen_name, string screen_resoltion, List<Item> items)
-        {
-            this.screen_name = screen_name;
-            this.screenresolution = screen_resoltion;
-            this.items = items;
-        }
-
-        public string screen_name
-        {
-            get
-            {
-                return this._screen_name;
-            }
-            set
-            {
-                this._screen_name = value;
-            }
-        }
-        public string screenresolution
-        {
-            get
-            {
-                return this._screen_resolution;
-            }
-            set
-            {
-                this._screen_resolution = value;
-            }
-        }
-        public List<Item> items
-        {
-            get
-            {
-                return _items;
-            }
-            set
-            {
-                _items = value;
-            }
-        }
 
     }
+
+
 }

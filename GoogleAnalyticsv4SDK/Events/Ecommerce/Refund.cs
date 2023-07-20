@@ -8,14 +8,13 @@ using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Add_To_Wishlist : IEvent
+    public class Refund : IEvent
     {
-        private string _name = "add_to_wishlist";
-        private Cart_Parameters _parameters;//required for calls
-
-        private Add_To_Wishlist(string currency, decimal value, List<Item> items)
+        private string _name = "refund";
+        private Purchase_Refund_Parameters _parameters;
+        public Refund(string _currency, string _transaction_id, decimal _value, List<Item> _items = default, string _coupon = default, decimal _shipping = default, decimal _tax = default)
         {
-            this.parameters = new Cart_Parameters(currency, value, items);
+            this.parameters = new Purchase_Refund_Parameters(_currency, _transaction_id, _value, _items, _coupon, _shipping, _tax);
         }
         public string name
         {
@@ -25,7 +24,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Cart_Parameters parameters
+        public Purchase_Refund_Parameters parameters
         {
             get
             {

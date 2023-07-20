@@ -8,15 +8,16 @@ using System.Collections.Generic;
 
 namespace GoogleAnalyticsv4SDK.Events.Ecommerce
 {
-    public class Add_To_Wishlist : IEvent
+    public class Remove_From_Cart : IEvent
     {
-        private string _name = "add_to_wishlist";
-        private Cart_Parameters _parameters;//required for calls
+        private string _name = "remove_from_cart";
+        private Cart_Parameters _parameters;
 
-        private Add_To_Wishlist(string currency, decimal value, List<Item> items)
+        public Remove_From_Cart(string currency, decimal value, List<Item> items)
         {
             this.parameters = new Cart_Parameters(currency, value, items);
         }
+
         public string name
         {
             get

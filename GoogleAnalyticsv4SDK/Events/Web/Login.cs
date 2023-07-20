@@ -1,20 +1,17 @@
-﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
-using System;
-
-namespace GoogleAnalyticsv4SDK.Events.Mobile
+namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Execeptions : IEvent
+    public class Login : IEvent
     {
-        private Exception_Parameters _parameters;
-        private const string _name = "exception";
-        public Execeptions(Exception e)
+        private string _name = "login";
+        private Login_SignUp_Parameters _parameters;
+        public Login(string method = default)
         {
-            this._parameters = new Exception_Parameters(e);
-
+            this.parameters = new Login_SignUp_Parameters(method);
         }
         public string name
         {
@@ -24,7 +21,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
         }
         [JsonProperty("params")]
-        public Exception_Parameters parameters
+        public Login_SignUp_Parameters parameters
         {
             get
             {
@@ -34,7 +31,6 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             {
                 _parameters = value;
             }
-
         }
     }
 }

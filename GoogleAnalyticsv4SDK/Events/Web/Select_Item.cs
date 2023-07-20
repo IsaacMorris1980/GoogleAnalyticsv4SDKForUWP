@@ -1,4 +1,4 @@
-﻿using GoogleAnalyticsv4SDK.Events.Ecommerce.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Web.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 using GoogleAnalyticsv4SDK.Models;
 
@@ -6,16 +6,15 @@ using Newtonsoft.Json;
 
 using System.Collections.Generic;
 
-namespace GoogleAnalyticsv4SDK.Events.Ecommerce
+namespace GoogleAnalyticsv4SDK.Events.Web
 {
-    public class Add_To_Wishlist : IEvent
+    public class Select_Item : IEvent
     {
-        private string _name = "add_to_wishlist";
-        private Cart_Parameters _parameters;//required for calls
-
-        private Add_To_Wishlist(string currency, decimal value, List<Item> items)
+        private string _name = "select_item";
+        private Select_Item_Parameters _parameters;
+        public Select_Item(List<Item> items, string item_list_id = default, string item_list_name = default)
         {
-            this.parameters = new Cart_Parameters(currency, value, items);
+            this.parameters = new Select_Item_Parameters(items, item_list_id, item_list_name);
         }
         public string name
         {
@@ -25,7 +24,7 @@ namespace GoogleAnalyticsv4SDK.Events.Ecommerce
             }
         }
         [JsonProperty("params")]
-        public Cart_Parameters parameters
+        public Select_Item_Parameters parameters
         {
             get
             {

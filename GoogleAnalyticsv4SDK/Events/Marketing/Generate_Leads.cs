@@ -1,20 +1,18 @@
-﻿using GoogleAnalyticsv4SDK.Events.Mobile.Parameters;
+﻿using GoogleAnalyticsv4SDK.Events.Marketing.Parameters;
 using GoogleAnalyticsv4SDK.Interfaces;
 
 using Newtonsoft.Json;
 
-using System;
-
-namespace GoogleAnalyticsv4SDK.Events.Mobile
+namespace GoogleAnalyticsv4SDK.Events.Marketing
 {
-    public class Execeptions : IEvent
+    public class Generate_Lead : IEvent
     {
-        private Exception_Parameters _parameters;
-        private const string _name = "exception";
-        public Execeptions(Exception e)
-        {
-            this._parameters = new Exception_Parameters(e);
+        private string _name = "generate_lead";
+        private Lead_Parameters _parameters;
 
+        public Generate_Lead(string currency, decimal value)
+        {
+            this.parameters = new Lead_Parameters(currency, value);
         }
         public string name
         {
@@ -24,7 +22,7 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             }
         }
         [JsonProperty("params")]
-        public Exception_Parameters parameters
+        public Lead_Parameters parameters
         {
             get
             {
@@ -34,7 +32,6 @@ namespace GoogleAnalyticsv4SDK.Events.Mobile
             {
                 _parameters = value;
             }
-
         }
     }
 }
